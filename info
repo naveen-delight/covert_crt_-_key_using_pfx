@@ -1,0 +1,17 @@
+# Once you got the public pfx file we can run the below commands to export .crt and .key files
+
+.pfx Pasword : 987654
+
+
+# Run the following command to extract the private key:
+    openssl pkcs12 -in intrepid-dev.pfx -nocerts -out intrepid-dev.key
+
+# Run the following command to extract the certificate:
+    openssl pkcs12 -in intrepid-dev.pfx -clcerts -nokeys -out intrepid-dev.crt
+
+#Run the following command to decrypt the private key:
+    openssl rsa -in intrepid-dev.key -out intrepid-dev-decrypted.key
+
+# Run the command to check certificate vaild
+  openssl x509 -in intrepid-dev.crt -noout -text
+
